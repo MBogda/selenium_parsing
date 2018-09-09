@@ -1,0 +1,69 @@
+/* Map module */
+
+.map-menulid {
+  padding:0 0 2px;
+  display:block;
+}
+
+.map-options {
+  padding:2px 2px;
+  text-align:left;
+  background-color:#fff;
+}
+.map-options img { cursor:pointer }
+
+.map-container { background-color:#fff;}
+
+.map-zoomOut,
+.map-zoomIn {
+  margin:0 auto;
+  border:1px solid #fff; 
+  text-align: center;
+}
+
+
+.map-container .map-zoomIn { /* class selector applied when on zoom-in */
+  border:1px solid #efefef; 
+  overflow:hidden;
+  background-repeat: no-repeat;
+}
+
+.map-container .disclaimer {
+  font-size:11px;  
+  text-align:left;
+  overflow: hidden;
+  color: #414141;
+}
+
+.chart-container {
+  width: 100%;
+  overflow: hidden;
+  background-repeat: no-repeat;
+}
+/* **************************************** */
+/* map-zoom styles are going to be removed  */
+/* when the map-zoom is not a popup anymore */
+/* **************************************** */
+
+#map-zoom {  
+  position:absolute;
+  z-index:3;
+  padding:2px;
+  background-color:#fff;
+  border:1px solid #cacaca;
+  max-width:685px;
+}
+#map-zoom .left { float:left }
+#map-zoom .right { float:right }
+#map-zoom .clear { height:auto }
+#map-zoom .disclaimer { 
+  display:block;
+  width:610px;
+  padding:10px 30px;
+  font-size:11px;     
+}
+#map-zoom img.close {
+  vertical-align:top;
+  cursor:pointer;
+}
+/* ****************************************  */

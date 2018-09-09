@@ -1,0 +1,7 @@
+/*
+EFEAT4044 Retargeting Fan on Homepage
+Description: Welcome back fans who have left on the delivery page with a reminder on the homepage: SET COOKIE.
+Author: Juan P. Mendoza
+Last Updated: 04/28/2017
+*/
+(function(){var e={setCookie:function(e,a,t,i){var n="",o="";if(t){var r=new Date;r.setTime(r.getTime()+1e3*t*60),n="; expires="+r.toGMTString()}i&&(o="; domain="+i),document.cookie=e+"="+a+n+o+"; path=/"},readCookie:function(e){for(var a=e+"=",t=document.cookie.split(";"),i=0;i<t.length;i++){for(var n=t[i];" "===n.charAt(0);)n=n.substring(1,n.length);if(0===n.indexOf(a))return n.substring(a.length,n.length)}return null},removeCookie:function(e,a){this.setCookie(e,"",-1,a)}};if("Checkout: Shipping"==digitalData.page.pageInfo.pageType||"TM_US: Responsive Checkout: Shipping"==digitalData.page.pageInfo.pageChannel){var a=digitalData.page.attributes.artistID,t=digitalData.page.attributes.eventID,i=digitalData.page.attributes.eventDate+" "+digitalData.page.attributes.eventTime,n=[a,t,i],o=JSON.stringify(n);e.removeCookie("m_ab_remindFan"),e.setCookie("m_ab_remindFan",o,131400,".ticketmaster.com")}"Checkout: Confirmation"!=digitalData.page.pageInfo.pageType&&"TM_US: Responsive Checkout: Confirmation"!=digitalData.page.pageInfo.pageChannel||null!=e.readCookie("m_ab_remindFan")&&JSON.parse(e.readCookie("m_ab_remindFan"))[0]==digitalData.page.attributes.artistID&&e.removeCookie("m_ab_remindFan",".ticketmaster.com")})();
